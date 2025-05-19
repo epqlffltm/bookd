@@ -1,3 +1,5 @@
+from crud.create import create_book
+
 def menu_title():
     print("\n어서오세요! 무엇을 도와드릴까요?")
     print("1. 도서 생성")
@@ -17,7 +19,7 @@ def menu_handle():
 
         if n == 1:
             print("도서 생성 기능 실행 중...")
-            # TODO: create_book()
+            create_book()
         elif n == 2:
             print("도서 검색 기능 실행 중...")
         elif n == 3:
