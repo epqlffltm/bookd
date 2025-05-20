@@ -1,4 +1,20 @@
-from crud.create import create_book
+from crud import create, read, update, delete
+
+def create_book():
+    create.create_book()
+
+def read_book():
+    read.read_book()
+
+def update_book():
+    update
+
+def delete_book():
+    delete
+
+def exit_program():
+    print("이용해 주셔서 감사합니다.")
+    return True  # 루프 종료 신호
 
 def menu_title():
     print("\n어서오세요! 무엇을 도와드릴까요?")
@@ -9,6 +25,14 @@ def menu_title():
     print("5. 프로그램 종료")
 
 def menu_handle():
+    menu_actions = {
+        1: create_book,
+        2: read_book,
+        3: update_book,
+        4: delete_book,
+        5: exit_program,
+    }
+
     while True:
         menu_title()
         try:
@@ -17,17 +41,10 @@ def menu_handle():
             print("숫자를 입력해주세요.")
             continue
 
-        if n == 1:
-            print("도서 생성 기능 실행 중...")
-            create_book()
-        elif n == 2:
-            print("도서 검색 기능 실행 중...")
-        elif n == 3:
-            print("도서 수정 기능 실행 중...")
-        elif n == 4:
-            print("도서 삭제 기능 실행 중...")
-        elif n == 5:
-            print("이용해 주셔서 감사합니다.")
-            break
+        action = menu_actions.get(n)
+        if action:
+            should_exit = action()
+            if should_exit:
+                break
         else:
             print("1부터 5 사이의 숫자를 입력해주세요.")
