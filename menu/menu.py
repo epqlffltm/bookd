@@ -7,7 +7,7 @@ def read_book():
     read.read_book()
 
 def update_book():
-    update
+    update.update_book()
 
 def delete_book():
     delete
