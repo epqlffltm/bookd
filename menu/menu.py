@@ -10,7 +10,7 @@ def update_book():
     update.update_book()
 
 def delete_book():
-    delete
+    delete.delete_book()
 
 def exit_program():
     print("이용해 주셔서 감사합니다.")
